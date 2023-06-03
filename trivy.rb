@@ -10,7 +10,7 @@ class Trivy < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/afdesk/trivy/releases/download/v0.43.0/trivy_0.43.0_macOS-64bit.tar.gz"
-      sha256 "76a725d9678577c396af52fde1f5bfacf08a4d41903e82efb4c7aca41d1ba449"
+      sha256 "3923f90f99b0c339b4c17e5325061b64096d09a6db96d166046bbddf4f8ee1a5"
 
       def install
         bin.install "trivy"
@@ -18,7 +18,7 @@ class Trivy < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/afdesk/trivy/releases/download/v0.43.0/trivy_0.43.0_macOS-ARM64.tar.gz"
-      sha256 "2b503612888075f82736830ee822cc596cd1ce53adcb94d0262982ee8a363c24"
+      sha256 "4abf8251465fe0a7b6367bb8d578004a003c809c7795447358f52f4147edccfc"
 
       def install
         bin.install "trivy"
@@ -27,17 +27,17 @@ class Trivy < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/afdesk/trivy/releases/download/v0.43.0/trivy_0.43.0_Linux-ARM64.tar.gz"
-      sha256 "876c018bae91121ed36ab5df22b10f0bdafd0cd9c2fee0d850749d47cc0f5384"
+    if Hardware::CPU.intel?
+      url "https://github.com/afdesk/trivy/releases/download/v0.43.0/trivy_0.43.0_Linux-64bit.tar.gz"
+      sha256 "491c37ca238c9584785d6f9928bce0d678335956398e7900af1f8bca907c6437"
 
       def install
         bin.install "trivy"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/afdesk/trivy/releases/download/v0.43.0/trivy_0.43.0_Linux-64bit.tar.gz"
-      sha256 "7d16183f086e5eb5d8ff0af73167b9852bfccbe20dbb9c29f0b040e3d5236ce1"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/afdesk/trivy/releases/download/v0.43.0/trivy_0.43.0_Linux-ARM64.tar.gz"
+      sha256 "74d1a6f29ec22d3a3fb8620a7ff8ccf169683ba70b8d560b7d3aad6b9159c8f6"
 
       def install
         bin.install "trivy"
